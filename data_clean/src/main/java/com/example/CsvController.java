@@ -26,13 +26,13 @@ import java.util.Set;
  * It uses Apache Commons CSV to parse the file, then cleans the data by:
  * - trimming whitespace
  * - filling missing values with blank
- * - removing duplicate rows
+ * - removing duplicate rowss
  */
 @Controller
 public class CsvController {
 
     /**
-     * Renders the upload page.
+     * Renders the upload page..
      */
     @GetMapping("/")
     public String home(Model model) {

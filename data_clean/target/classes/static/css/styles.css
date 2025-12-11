@@ -1,0 +1,143 @@
+:root {
+  --bg: #0f172a;
+  --bg-2: #111827;
+  --card: #0b1220;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --primary: #22d3ee;
+  --primary-600: #06b6d4;
+  --danger: #f87171;
+  --danger-600: #ef4444;
+  --success-bg: #052e2b;
+  --success-border: #065f46;
+  --success-text: #34d399;
+  --border: rgba(255,255,255,0.08);
+  --ring: rgba(34,211,238,0.35);
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,0.08), transparent 40%),
+    radial-gradient(1000px 500px at 110% -20%, rgba(99,102,241,0.08), transparent 40%),
+    linear-gradient(180deg, var(--bg), var(--bg-2));
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: saturate(180%) blur(10px);
+  background: rgba(11, 18, 32, 0.7);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header .inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.brand .logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--primary), #7c3aed);
+  box-shadow: 0 0 0 3px rgba(34,211,238,0.15);
+}
+
+.brand .title { color: var(--text); }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 28px 20px; }
+
+h1 { font-size: 28px; margin: 8px 0 14px; letter-spacing: 0.2px; }
+
+.tip { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+form .row { margin-bottom: 14px; }
+
+label { display: block; font-size: 14px; color: var(--muted); margin-bottom: 6px; }
+
+input[type="file"], select, input[type="text"], input[type="number"] {
+  width: 100%;
+  display: block;
+  padding: 10px 12px;
+  color: var(--text);
+  background: #0a0f1b;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+}
+
+input[type="file"]:focus { box-shadow: 0 0 0 4px var(--ring); border-color: var(--primary); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  padding: 10px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text);
+  cursor: pointer;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.0));
+  transition: transform 0.06s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover { transform: translateY(-1px); box-shadow: 0 10px 16px rgba(0,0,0,0.25); }
+
+.btn-primary {
+  border-color: rgba(34,211,238,0.35);
+  background: linear-gradient(180deg, rgba(34,211,238,0.15), rgba(34,211,238,0.05));
+}
+
+.btn-primary:hover { background: linear-gradient(180deg, rgba(34,211,238,0.22), rgba(34,211,238,0.06)); }
+
+.alert {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.alert-error { background: rgba(248,113,113,0.12); color: var(--danger); border-color: rgba(248,113,113,0.35); }
+
+.alert-success { background: var(--success-bg); color: var(--success-text); border-color: var(--success-border); }
+
+.table-wrap { margin-top: 16px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+
+table { width: 100%; border-collapse: collapse; font-size: 14px; background: #0a0f1b; }
+
+th, td { border-bottom: 1px solid var(--border); padding: 10px 12px; text-align: left; }
+
+th { background: rgba(255,255,255,0.02); color: var(--muted); font-weight: 600; letter-spacing: 0.2px; }
+
+.actions { margin-top: 16px; display: flex; gap: 10px; }
+
+.footer { margin: 24px 0 0; color: var(--muted); font-size: 13px; text-align: center; opacity: 0.85; }
