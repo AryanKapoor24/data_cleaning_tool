@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSV Cleaner - Upload</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="inner">
+        <div class="brand">
+            <div class="logo" aria-hidden="true"></div>
+            <div class="title">CSV Cleaner</div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <h1>Upload a CSV file</h1>
+    <p class="tip">This app will remove duplicate rows, trim extra spaces, and fill missing values with blank.</p>
+
+    <div th:if="${errorMessage}" class="alert alert-error" th:text="${errorMessage}"></div>
+
+    <form class="card" th:action="@{/upload}" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <label for="file">Choose CSV file</label>
+            <input id="file" name="file" type="file" accept=".csv,text/csv" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Upload and Clean</button>
+    </form>
+
+    <div class="footer">Your data is processed locally and never stored.</div>
+</div>
+</body>
+</html>
